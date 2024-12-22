@@ -1,8 +1,8 @@
-import { atom, useRecoilState } from "recoil";
+// import { atom, useRecoilState } from "recoil";
 
-const themeMode = atom({
-	key: 'appThemeMode',
-	default: false,
-})
+// const themeMode = atom({
+// 	key: 'appThemeMode',
+// 	default: false,
+// })
 
-export const useThemeMode = () => useRecoilState(themeMode);
+// export const useThemeMode = () => useRecoilState(themeMode);

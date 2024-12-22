@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'mockapp',
+      name: 'zingle',
       filename: 'remoteEntry.js',
       exposes: {
         './config': './npwd.config.ts',
@@ -44,5 +44,10 @@ export default defineConfig({
     emptyOutDir: true,
     modulePreload: false,
     assetsDir: '',
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // Adjust this if your src folder is in a different location
+    },
   },
 });

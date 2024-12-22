@@ -5,11 +5,11 @@ interface Settings {
   language: 'en';
 }
 
-export const path = '/mockapp';
+export const path = '/zingle';
 export default (settings: Settings) => ({
-  id: 'MOCKAPP',
+  id: 'ZINGLE',
   path,
-  nameLocale: "Mockapp", 
+  nameLocale: "Zingle",
   color: '#fff',
   backgroundColor: '#333',
   icon: AppIcon,

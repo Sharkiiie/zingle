@@ -8,6 +8,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../npwd.config';
+import './styles/global.css';
 
 import { HashRouter } from 'react-router-dom';
 import styled from '@emotion/styled';
@@ -16,8 +17,8 @@ import image from './bg.png';
 import { NuiProvider } from 'fivem-nui-react-lib';
 import { RecoilRoot } from 'recoil';
 import i18next from 'i18next';
-import { createTheme } from '@mui/material';
-import { lightTheme } from './app.theme';
+// import { createTheme } from '@mui/material';
+// import { lightTheme } from './app.theme';
 
 const Container = styled.div`
   position: relative;
@@ -55,10 +56,10 @@ const settings = {
     label: 'English',
     value: 'en',
   },
-  theme: {
-    label: 'Theme name',
-    value: 'theme-name',
-  },
+  // theme: {
+  //   label: 'Theme name',
+  //   value: 'theme-name',
+  // },
 } as any;
 
 /*
@@ -73,11 +74,12 @@ const Root = () => {
     <HashRouter>
       <RecoilRoot>
         <React.Suspense fallback="LOOOOL">
-          <NuiProvider resource='mockapp'>
+          <NuiProvider resource='zingle'>
             <Container>
               <Background src={image} />
               <AppContainer>
-                <App settings={settings} i18n={i18next} theme={createTheme(lightTheme)} />
+                {/* <App settings={settings} i18n={i18next} theme={createTheme(lightTheme)} /> */}
+                <App settings={settings} i18n={i18next} />
               </AppContainer>
             </Container>
           </NuiProvider>

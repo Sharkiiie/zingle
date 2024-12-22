@@ -1,30 +1,16 @@
-import React, { ReactNode } from 'react';
-import { Typography, Box, useTheme } from '@mui/material';
-import styled from '@emotion/styled';
-
-export const HEADER_HEIGHT = '4rem';
-const Container = styled.div<{ backgroundColor: string }>`
-  display: flex;
-  align-items: center;
-
-  min-height: ${HEADER_HEIGHT};
-  padding-left: 1.5rem;
-  background-color: ${({ backgroundColor }) => backgroundColor};
-`;
+import { CreditCard } from 'lucide-react'
+import React from 'react'
 
 interface HeaderProps {
-  children: ReactNode;
+    balance: string;
 }
 
-const Header = ({ children }: HeaderProps) => {
-  const theme = useTheme();
-  return (
-    <Container backgroundColor={theme.palette.primary.main}>
-      <Typography variant="h5" color="primary.contrastText">
-        {children}
-      </Typography>
-    </Container>
-  );
-};
+export default function Header({ balance }: HeaderProps) {
+    return (
+        <header className="flex justify-between items-center p-4 mx-2">
+            <h1 className="text-2xl font-bold">Zingle</h1>
+            <div className="text-sm flex gap-2 font-semibold items-center"><CreditCard /> ${balance}</div>
+        </header>
+    )
+}
 
-export default Header;
